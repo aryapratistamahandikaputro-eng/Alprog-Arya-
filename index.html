@@ -1,85 +1,74 @@
-<!DOCTYPE html>
-<!-- Deklarasi DOCTYPE yang menentukan bahwa dokumen ini adalah HTML5. DOCTYPE memberi tahu browser bahwa halaman ini menggunakan standar HTML terbaru, yang membantu dalam rendering yang konsisten dan menghindari mode quirks (mode kompatibilitas lama). -->
+<!DOCTYPE html> 
+<!-- Mendefinisikan bahwa dokumen ini menggunakan HTML5 -->
 
 <html lang="id">
-<!-- Tag pembuka <html> memulai dokumen HTML. Atribut lang="id" menentukan bahasa halaman sebagai Bahasa Indonesia, yang berguna untuk aksesibilitas, SEO, dan alat penerjemah browser. -->
+<!-- Tag pembuka HTML, dengan atribut 'lang' menandakan bahasa Indonesia -->
 
 <head>
-<!-- Elemen <head> berisi metadata tentang halaman web, seperti judul, stylesheet, dan pengaturan lainnya. Ini tidak ditampilkan di halaman web tetapi penting untuk browser dan mesin pencari. -->
-
 <meta charset="UTF-8">
-<!-- Meta tag ini menetapkan encoding karakter halaman ke UTF-8, yang mendukung karakter internasional (termasuk Bahasa Indonesia) dan mencegah masalah tampilan teks yang salah. -->
+<!-- Menentukan karakter encoding dokumen agar mendukung karakter bahasa Indonesia -->
 
 <title>Sistem Informasi Statistik Kabupaten Gunungkidul</title>
-<!-- Elemen <title> menetapkan judul halaman yang muncul di tab browser dan hasil pencarian. Judul ini deskriptif dan relevan dengan konten halaman tentang statistik Gunungkidul. -->
+<!-- Judul halaman yang muncul di tab browser -->
 
 <style>
-<!-- Tag <style> berisi CSS inline untuk mengatur tampilan halaman. CSS ini didefinisikan langsung di dalam HTML, bukan dalam file terpisah, yang membuatnya sederhana tetapi kurang efisien untuk situs besar. -->
-
+/* Bagian CSS untuk mengatur tampilan halaman */
     body {
-    <!-- Aturan CSS untuk elemen <body>. Ini mengatur font ke Arial, menambahkan gambar latar belakang (dari URL eksternal) yang menutupi seluruh area, tetap diam saat scroll (fixed), tidak diulang, dan diposisikan di tengah. Margin dan padding diatur ke 0 untuk menghilangkan spasi default browser. -->
-        font-family: Arial, sans-serif;
+        font-family: Arial, sans-serif; /* Mengatur jenis huruf */
         background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeR4Dv03pZCzM8k5-R1Yj_6-8FOM3JOxI22bh3C4xtvsfo8tdFhhqcKD2V1vDsE6g76vueJrLq7K-o8UR2YYtSmrISAxLrwLEJBkb8ZDNDdrZTTZqCVSwyuZBokgv6TCrrWd7cr-3JXgQT/s1600/1624068078788981-0.png');
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-position: center;
+        /* Memberikan gambar latar belakang */
+        background-size: cover; /* Gambar diperbesar agar menutupi seluruh layar */
+        background-attachment: fixed; /* Gambar tetap saat halaman discroll */
+        background-repeat: no-repeat; /* Agar gambar tidak berulang */
+        background-position: center; /* Meletakkan gambar di tengah */
         margin: 0;
         padding: 0;
     }
 
     table {
-    <!-- Aturan untuk elemen <table>. Border-collapse menggabungkan batas sel, lebar 70% dari kontainer induk, margin otomatis untuk centering, dan latar belakang putih transparan (85% opasitas) untuk kontras dengan gambar latar. -->
-        border-collapse: collapse;
-        width: 70%;
-        margin: 20px auto;
-        background-color: rgba(255, 255, 255, 0.85);
+        border-collapse: collapse; /* Menggabungkan garis batas tabel */
+        width: 70%; /* Lebar tabel 70% dari halaman */
+        margin: 20px auto; /* Menengahkan tabel */
+        background-color: rgba(255, 255, 255, 0.85); /* Warna putih transparan */
     }
 
     th, td {
-    <!-- Aturan untuk header tabel (<th>) dan sel data (<td>). Menambahkan batas hitam tipis, teks rata tengah, dan padding 6px untuk spasi dalam sel. -->
-        border: 1px solid black;
-        text-align: center;
-        padding: 6px;
+        border: 1px solid black; /* Garis tepi tabel hitam */
+        text-align: center; /* Teks di tengah */
+        padding: 6px; /* Jarak isi dengan batas */
     }
 
     th {
-    <!-- Aturan khusus untuk <th> (header tabel), memberikan latar belakang abu-abu muda untuk membedakan dari sel data. -->
-        background-color: #d9d9d9;
+        background-color: #d9d9d9; /* Warna abu-abu untuk judul kolom */
     }
 
     .container {
-    <!-- Kelas CSS .container untuk div utama. Lebar 90%, margin otomatis untuk centering, menggunakan flexbox untuk layout (menu dan konten berdampingan), latar putih transparan, dan sudut melengkung 10px. -->
-        width: 90%;
-        margin: 0 auto;
-        display: flex;
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
+        width: 90%; /* Lebar kontainer */
+        margin: 0 auto; /* Ditengah */
+        display: flex; /* Mengatur layout horizontal */
+        background-color: rgba(255, 255, 255, 0.8); /* Putih transparan */
+        border-radius: 10px; /* Membulatkan sudut */
     }
 
     .menu {
-    <!-- Kelas .menu untuk div menu. Lebar 20% dari kontainer, padding 10px, dan vertikal-align top untuk menjaga posisi atas dalam flexbox. -->
-        width: 20%;
+        width: 20%; /* Lebar kolom menu kiri */
         padding: 10px;
         vertical-align: top;
     }
 
     .menu ul {
-    <!-- Aturan untuk <ul> di dalam menu. Menghilangkan bullet points (list-style-type: none) dan padding default untuk tampilan bersih. -->
-        list-style-type: none;
+        list-style-type: none; /* Menghilangkan tanda list (•) */
         padding: 0;
     }
 
     .menu li {
-    <!-- Aturan untuk <li> di menu. Menambahkan margin bawah 8px untuk spasi antar item menu. -->
-        margin-bottom: 8px;
+        margin-bottom: 8px; /* Jarak antar menu */
     }
 
     .menu a {
-    <!-- Aturan untuk link (<a>) di menu. Menghilangkan garis bawah, warna hitam, latar abu-abu muda, display block untuk lebar penuh, padding 6px, sudut melengkung 5px, dan teks rata tengah. -->
-        text-decoration: none;
-        color: black;
-        background-color: #f2f2f2;
+        text-decoration: none; /* Menghilangkan garis bawah link */
+        color: black; /* Warna teks hitam */
+        background-color: #f2f2f2; /* Warna latar tombol */
         display: block;
         padding: 6px;
         border-radius: 5px;
@@ -87,128 +76,93 @@
     }
 
     .menu a:hover {
-    <!-- Aturan hover untuk link menu. Mengubah latar menjadi abu-abu lebih gelap saat kursor di atas, memberikan efek interaktif. -->
-        background-color: #ddd;
+        background-color: #ddd; /* Warna berubah saat diarahkan kursor */
     }
 
     .content {
-    <!-- Kelas .content untuk div konten. Lebar 80% dari kontainer, teks rata tengah, dan padding 10px untuk spasi. -->
-        width: 80%;
+        width: 80%; /* Area konten kanan */
         text-align: center;
         padding: 10px;
     }
 
     .header {
-    <!-- Kelas .header untuk div header. Teks rata tengah dan margin atas 20px untuk spasi dari atas halaman. -->
-        text-align: center;
+        text-align: center; /* Header di tengah */
         margin-top: 20px;
     }
 
     .header img {
-    <!-- Aturan untuk gambar (<img>) di header. Lebar 100px, display block untuk baris baru, dan margin otomatis untuk centering. -->
-        width: 100px;
+        width: 100px; /* Ukuran logo */
         display: block;
-        margin: 0 auto;
+        margin: 0 auto; /* Ditengah */
     }
 
     .header h3 {
-    <!-- Aturan untuk <h3> di header. Latar putih transparan, display inline-block untuk lebar sesuai konten, padding 5px vertikal dan 15px horizontal, serta sudut melengkung 8px. -->
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.8); /* Warna latar teks header */
         display: inline-block;
         padding: 5px 15px;
         border-radius: 8px;
     }
-
 </style>
-<!-- Penutup tag <style>, menandai akhir dari blok CSS. -->
-
 </head>
-<!-- Penutup elemen <head>, yang berarti metadata selesai dan transisi ke konten utama. -->
 
 <body>
-<!-- Tag pembuka <body> memulai konten yang dapat dilihat oleh pengguna. Semua elemen visual halaman ada di sini. -->
+<!-- Awal isi halaman web -->
 
 <div class="header">
-<!-- Div dengan kelas header, yang berisi logo dan judul halaman. Menggunakan CSS dari .header untuk styling. -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Seal_of_Gunungkidul_Regency.svg/800px-Seal_of_Gunungkidul_Regency.svg.png" alt="Logo Kabupaten Gunungkidul">
-    <!-- Elemen gambar (<img>) menampilkan logo resmi Kabupaten Gunungkidul dari URL Wikimedia. Atribut alt memberikan teks alternatif untuk aksesibilitas jika gambar gagal dimuat. -->
+    <!-- Bagian atas halaman berisi logo dan judul -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Seal_of_Gunungkidul_Regency.svg/800px-Seal_of_Gunungkidul_Regency.svg.png" 
+         alt="Logo Kabupaten Gunungkidul">
+    <!-- Menampilkan logo Gunungkidul -->
     <h3>SISTEM INFORMASI STATISTIK KABUPATEN GUNUNGKIDUL</h3>
-    <!-- Heading level 3 (<h3>) menampilkan judul utama halaman. Ini menggunakan styling dari .header h3 untuk latar dan padding. -->
+    <!-- Judul utama halaman -->
 </div>
-<!-- Penutup div header. -->
 
 <div class="container">
-<!-- Div utama dengan kelas container, yang berisi menu dan konten. Menggunakan flexbox dari CSS .container untuk layout berdampingan. -->
-    <!-- MENU DI KIRI -->
-    <!-- Komentar HTML yang menjelaskan bahwa bagian ini adalah menu di sisi kiri. Komentar ini tidak ditampilkan di halaman tetapi membantu pengembang. -->
-    <div class="menu">
-    <!-- Div dengan kelas menu, yang berisi daftar link navigasi. Lebarnya 20% sesuai CSS. -->
-        <ul>
-        <!-- Tag pembuka <ul> (unordered list) untuk daftar menu. Tidak ada bullet karena CSS menghilangkannya. -->
-            <li><a href="https://gunungkidulkab.bps.go.id/id/statistics-table/2/NDQjMg==/jumlah-penduduk-per-kecamatan.html" target="_blank">Penduduk</a></li>
-            <!-- Item list (<li>) dengan link (<a>) ke halaman eksternal tentang penduduk. Target="_blank" membuka di tab baru. Ini adalah link aktif pertama. -->
-            <li><a href="#">Geografi dan Iklim</a></li>
-            <!-- Item list dengan link placeholder (#), yang tidak mengarah ke mana-mana (biasanya untuk navigasi statis atau placeholder). -->
-            <li><a href="#">Pemerintahan</a></li>
-            <!-- Sama seperti di atas, link placeholder untuk kategori Pemerintahan. -->
-            <li><a href="#">Sosial</a></li>
-            <!-- Link placeholder untuk Sosial. -->
-            <li><a href="#">Industri</a></li>
-            <!-- Link placeholder untuk Industri. -->
-            <li><a href="#">Pariwisata</a></li>
-            <!-- Link placeholder untuk Pariwisata. -->
-            <li><a href="#">Keuangan</a></li>
-            <!-- Link placeholder untuk Keuangan. -->
-        </ul>
-        <!-- Penutup <ul>, menandai akhir daftar menu. -->
-    </div>
-    <!-- Penutup div menu. -->
+    <!-- Kontainer utama yang membagi halaman menjadi dua bagian -->
 
-    <!-- ISI TABEL -->
-    <!-- Komentar yang menjelaskan bagian ini adalah isi tabel data. -->
-    <div class="content">
-    <!-- Div dengan kelas content, yang berisi tabel data. Lebarnya 80% sesuai CSS. -->
-        <h4>Tabel Penduduk per Kecamatan</h4>
-        <!-- Heading level 4 (<h4>) sebagai judul tabel, rata tengah sesuai CSS .content. -->
-        <table>
-        <!-- Tag pembuka <table> untuk tabel data. Menggunakan CSS table untuk styling. -->
-            <tr>
-            <!-- Baris pertama (<tr>) untuk header tabel. -->
-                <th>Kecamatan</th>
-                <!-- Header kolom pertama (<th>) untuk nama kecamatan. -->
-                <th>Jumlah Penduduk (jiwa)</th>
-                <!-- Header kolom kedua (<th>) untuk jumlah penduduk. -->
-            </tr>
-            <!-- Penutup baris header. -->
-            <tr><td>Wonosari</td><td>89.788</td></tr>
-            <!-- Baris data (<tr>) untuk kecamatan Wonosari dengan jumlah penduduk 89.788 jiwa. <td> adalah sel data. -->
-            <tr><td>Playen</td><td>62.161</td></tr>
-            <!-- Baris data untuk Playen dengan 62.161 jiwa. -->
-            <tr><td>Ponjong</td><td>56.477</td></tr>
-            <!-- Baris data untuk Ponjong dengan 56.477 jiwa. -->
-            <tr><td>Karangmojo</td><td>56.996</td></tr>
-            <!-- Baris data untuk Karangmojo dengan 56.996 jiwa. -->
-            <tr><td>Semanu</td><td>60.727</td></tr>
-            <!-- Baris data untuk Semanu dengan 60.727 jiwa. -->
-            <tr><td>Nglipar</td><td>33.887</td></tr>
-            <!-- Baris data untuk Nglipar dengan 33.887 jiwa. -->
-            <tr><td>Ngawen</td><td>35.303</td></tr>
-            <!-- Baris data untuk Ngawen dengan 35.303 jiwa. -->
-            <tr><td>Gedangsari</td><td>40.000</td></tr>
-            <!-- Baris data untuk Gedangsari dengan 40.000 jiwa. -->
-            <tr><td>Tanjungsari</td><td>29.544</td></tr>
-            <!-- Baris data untuk Tanjungsari dengan 29.544 jiwa. -->
-            <tr><td>Rongkop</td><td>29.884</td></tr>
-            <!-- Baris data untuk Rongkop dengan 29.884 jiwa. -->
-        </table>
-        <!-- Penutup <table>, menandai akhir tabel data. -->
+    <div class="menu">
+        <!-- Menu navigasi di sisi kiri -->
+        <ul>
+            <li><a href="https://gunungkidulkab.bps.go.id/id/statistics-table/2/NDQjMg==/jumlah-penduduk-per-kecamatan.html" target="_blank">Penduduk</a></li>
+            <!-- Menu link ke data penduduk -->
+            <li><a href="#">Geografi dan Iklim</a></li>
+            <li><a href="#">Pemerintahan</a></li>
+            <li><a href="#">Sosial</a></li>
+            <li><a href="#">Industri</a></li>
+            <li><a href="#">Pariwisata</a></li>
+            <li><a href="#">Keuangan</a></li>
+        </ul>
     </div>
-    <!-- Penutup div content. -->
+
+    <div class="content">
+        <!-- Bagian kanan berisi konten utama -->
+        <h4>Tabel Penduduk per Kecamatan</h4>
+        <!-- Judul tabel -->
+        <table>
+            <!-- Awal tabel -->
+            <tr>
+                <th>Kecamatan</th>
+                <th>Jumlah Penduduk (jiwa)</th>
+            </tr>
+            <!-- Baris judul kolom -->
+            <tr><td>Wonosari</td><td>89.788</td></tr>
+            <tr><td>Playen</td><td>62.161</td></tr>
+            <tr><td>Ponjong</td><td>56.477</td></tr>
+            <tr><td>Karangmojo</td><td>56.996</td></tr>
+            <tr><td>Semanu</td><td>60.727</td></tr>
+            <tr><td>Nglipar</td><td>33.887</td></tr>
+            <tr><td>Ngawen</td><td>35.303</td></tr>
+            <tr><td>Gedangsari</td><td>40.000</td></tr>
+            <tr><td>Tanjungsari</td><td>29.544</td></tr>
+            <tr><td>Rongkop</td><td>29.884</td></tr>
+            <!-- Data penduduk per kecamatan -->
+        </table>
+        <!-- Akhir tabel -->
+    </div>
 </div>
-<!-- Penutup div container. -->
 
 </body>
-<!-- Penutup <body>, menandai akhir konten halaman. -->
+<!-- Akhir isi halaman -->
 
 </html>
-<!-- Penutup <html>, menandai akhir seluruh dokumen HTML. -->
+<!-- Akhir dokumen HTML -->
